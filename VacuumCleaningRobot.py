@@ -2,29 +2,31 @@ import matplotlib.pyplot as plt
 import numpy as np 
 
 map: int = [[]]; 
-grid_bits = { "clean": 0, "dirty": 1, "obstacle": 2 }
+grid_bits = { "clean": 0, "dirty": 1, "obstacle": 2, "unchecked" : -1 }
 
 
 def generate_and_initialize(rows: int, cols: int):
 	global map
-	map = [[0 for i in range(cols)] for j in range(rows)]
+	map = [[-1 for i in range(rows)] for j in range(cols)]
 	pass
 
 
 def explore(x: int, y: int, rows: int, cols: int):
 	global grid_bits
 	global map
-	if (x < 0 or y < 0 or x >=rows or y >=rows or 
+	if (x < 0 or y < 0 or x >= rows or y >= rows or 
 		map[x][y] == grid_bits["obstacle"] or map[x][y] == grid_bits["clean"]):
 		return
-
-
-	map[x][y] = 0
 	
+	map[x][y] = 0
+
 	explore(x+1, y  , rows, cols)
 	explore(x-1, y  , rows, cols)
 	explore(x  , y+1, rows, cols)
 	explore(x  , y-1, rows, cols)
+	
+	
+	
 	pass
 
 
