@@ -57,8 +57,8 @@ def main():
 
 	generate_and_initialize(rows, cols)
 	
-	dirty_grids = input("Enter dirty grids").split()
-	obstacle_grids = input("Enter Obstacle grids").split()
+	dirty_grids = input("Enter dirty grids\n").split()
+	obstacle_grids = input("Enter Obstacle grids\n").split()
 
 	if len(dirty_grids) > rows * cols or len(obstacle_grids) > rows * cols: 
 		exit()
@@ -87,9 +87,9 @@ def main():
 	plt.xticks(np.arange(0.5, rows+1, step = 1))
 	plt.yticks(np.arange(0.5, cols+1, step = 1))
 	plt.imshow(map)
-	plt.grid(True, which="both")
 	ax.set_xticklabels([])
 	ax.set_yticklabels([])
+	plt.grid(True, which="both")
 	im = plt.imshow(map)
 	plt.colorbar(im, orientation='vertical')
 

@@ -38,8 +38,11 @@ The third set of values correspond to the location of the
 
 ![3x3 Grid](./Screenshots/3x3.png)
 
-__The blue colored square represents the dirty grids__
+![3x3 Grid](./Screenshots/3x3_1.png)
 
-__The yellow squares are obstacles__
 
-__Purple represents the clean grids__
+__Green - Dirty__
+
+__Yellow - Obstacle__
+
+__Purple - Clean__
